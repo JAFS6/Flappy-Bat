@@ -17,7 +17,7 @@ limitations under the License.
 var isPlay = false;
 var isHowToPlay = false;
 var isCredits = false;
-var isQuit=false;
+var isQuit = false;
 
 function OnMouseEnter(){
 	//change text color
@@ -32,7 +32,6 @@ function OnMouseExit(){
 }
 
 function OnMouseUp(){
-	
 	
 	if (isPlay == true) {
 		// load level 1
