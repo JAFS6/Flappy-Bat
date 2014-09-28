@@ -14,6 +14,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-function OnMouseUp(){
-	Application.LoadLevel("Main Menu");
+using UnityEngine;
+using System.Collections;
+
+public class BackToMainMenu : MonoBehaviour {
+
+	void OnMouseUp(){
+		Application.LoadLevel("Main Menu");
+	}
 }
