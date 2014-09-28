@@ -34,19 +34,21 @@ public class ObstacleController : MonoBehaviour {
 	}
 
 	void Update () {
-		Vector3 newposition = new Vector3();
-		newposition = this.transform.position;
-		newposition.x = newposition.x - speed * Time.deltaTime;
-		
-		if (newposition.x < min_x) {
-			Destroy(this.gameObject);
-		}
-		this.transform.position = newposition;
+		if (!PlayerController.dead) {
+			Vector3 newposition = new Vector3();
+			newposition = this.transform.position;
+			newposition.x = newposition.x - speed * Time.deltaTime;
+			
+			if (newposition.x < min_x) {
+				Destroy(this.gameObject);
+			}
+			this.transform.position = newposition;
 
-		if (isUp) {
-			if (!counted && (bat.transform.position.x > this.transform.position.x)) {
-				GameController.score++;
-				counted = true;
+			if (isUp) {
+				if (!counted && (bat.transform.position.x > this.transform.position.x)) {
+					GameController.score++;
+					counted = true;
+				}
 			}
 		}
 	}

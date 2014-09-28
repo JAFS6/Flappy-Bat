@@ -24,13 +24,15 @@ public class BackgroundController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 newposition = new Vector3();
-		newposition = this.transform.position;
-		newposition.x = newposition.x - speed * Time.deltaTime;
+		if (!PlayerController.dead) {
+			Vector3 newposition = new Vector3();
+			newposition = this.transform.position;
+			newposition.x = newposition.x - speed * Time.deltaTime;
 
-		if (newposition.x < min_x) {
-			newposition.x = 49.9f;
+			if (newposition.x < min_x) {
+				newposition.x = 49.9f;
+			}
+			this.transform.position = newposition;
 		}
-		this.transform.position = newposition;
 	}
 }

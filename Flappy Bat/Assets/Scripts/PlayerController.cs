@@ -18,7 +18,11 @@ using UnityEngine;
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
-	
+
+	public AudioClip fx_impact;
+	public AudioClip fx_flap;
+	static public bool dead;
+
 	private float flap_force = 200f;
 	private float y_max = 4.5f;
 	private float y_min = -5f;
@@ -26,6 +30,7 @@ public class PlayerController : MonoBehaviour {
 	
 	void Start () {
 		anim = GetComponent<Animator>();
+		dead = false;
 	}
 
 	void Update () {
@@ -38,15 +43,23 @@ public class PlayerController : MonoBehaviour {
 			this.transform.position = position;
 		}
 		else if (position.y < y_min) {
+			dead = true;
 			Application.LoadLevel("Game Over");
 		}
 		else if (GameController.started && Input.GetKeyDown(KeyCode.Space)) {
+			AudioSource.PlayClipAtPoint(fx_flap, this.transform.position);
 			anim.SetTrigger("Flap");
 			rigidbody2D.AddForce(new Vector2(0,flap_force));
 		}
 	}
 
 	void OnCollisionEnter2D(Collision2D other) {
+		AudioSource.PlayClipAtPoint(fx_impact, this.transform.position);
+		dead = true;
+		Invoke("goGameOver", 0.5f);
+	}
+
+	void goGameOver () {
 		Application.LoadLevel("Game Over");
 	}
 }
