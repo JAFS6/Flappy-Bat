@@ -1,0 +1,40 @@
+Initialize engine version: 4.5.4f1 (e036f44c54c9)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: ATI Mobility Radeon HD 3650 (ID=0x9591)
+    Vendor:   ATI
+    VRAM:     507 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Juan\Documents\Unity Projects\Flappy-Bat\Bin\Flappy Bat_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Juan\Documents\Unity Projects\Flappy-Bat\Bin\Flappy Bat_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Juan\Documents\Unity Projects\Flappy-Bat\Bin\Flappy Bat_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Juan\Documents\Unity Projects\Flappy-Bat\Bin\Flappy Bat_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+- Completed reload, in  0.074 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+UnloadTime: 1.189744 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 211.
+Total: 3.182011 ms (FindLiveObjects: 0.043477 ms CreateObjectMapping: 0.034872 ms MarkObjects: 0.240032 ms  DeleteObjects: 0.115034 ms)
+
+UnloadTime: 1.091467 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 205.
+Total: 2.793431 ms (FindLiveObjects: 0.034419 ms CreateObjectMapping: 0.041213 ms MarkObjects: 0.211047 ms  DeleteObjects: 0.012228 ms)
+
+UnloadTime: 1.521260 ms
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 97 unused Assets to reduce memory usage. Loaded Objects now: 120.
+Total: 5.159786 ms (FindLiveObjects: 0.029890 ms CreateObjectMapping: 0.033513 ms MarkObjects: 0.168928 ms  DeleteObjects: 2.261737 ms)
+
+UnloadTime: 1.181592 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 122.
+Total: 7.085931 ms (FindLiveObjects: 0.022191 ms CreateObjectMapping: 0.029890 ms MarkObjects: 0.165305 ms  DeleteObjects: 4.283895 ms)
+
