@@ -23,20 +23,26 @@ public class MainMenuSelector : MonoBehaviour {
 	public bool isHowToPlay = false;
 	public bool isCredits = false;
 	public bool isQuit = false;
+	Color32 colorbase;
 
-	void OnMouseEnter(){
-		//change text color
-		//renderer.material.color = Color.blue;
-		guiText.color = Color.blue;
+	void Start () {
+		colorbase.r = 97;
+		colorbase.g = 105;
+		colorbase.b = 176;
+		colorbase.a = 255;
 	}
 
-	void OnMouseExit(){
+	void OnMouseEnter () {
 		//change text color
-		//renderer.material.color = Color.black;
-		guiText.color = Color.black;
+		guiText.color = Color.red;
 	}
 
-	void OnMouseUp(){
+	void OnMouseExit () {
+		//change text color
+		guiText.color = colorbase;
+	}
+
+	void OnMouseUp () {
 		
 		if (isPlay == true) {
 			// load level 1
