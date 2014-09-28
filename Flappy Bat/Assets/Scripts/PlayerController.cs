@@ -18,22 +18,14 @@ using UnityEngine;
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
-
-	bool started;
+	
 	float flap_force = 200f;
 	float y_max = 4.5f;
 	float y_min = -5f;
 	Animator anim;
-	GameObject starthint;
 	
 	void Start () {
 		anim = GetComponent<Animator>();
-		starthint = GameObject.Find("StartHint");
-		Vector3 hintpos = new Vector3();
-		hintpos = starthint.transform.position;
-		hintpos.y = 0.7f;
-		starthint.transform.position = hintpos;
-		started = false;
 	}
 
 	void Update () {
@@ -48,20 +40,9 @@ public class PlayerController : MonoBehaviour {
 		else  if(position.y < y_min) {
 			Application.LoadLevel("Game Over");
 		}
-		else if( started && Input.GetKeyDown(KeyCode.Space) ) {
+		else if( GameController.started && Input.GetKeyDown(KeyCode.Space) ) {
 			anim.SetTrigger("Flap");
 			rigidbody2D.AddForce(new Vector2(0,flap_force));
-		}
-		else if( !started && Input.GetKeyDown(KeyCode.Space) ) {
-			anim.SetTrigger("Flap");
-			rigidbody2D.AddForce(new Vector2(0,flap_force));
-			started = true;
-			rigidbody2D.gravityScale = 0.4f;
-			anim.SetBool("Started",true);
-			Vector3 hintpos = new Vector3();
-			hintpos = starthint.transform.position;
-			hintpos.y += 3;
-			starthint.transform.position = hintpos;
 		}
 	}
 }
