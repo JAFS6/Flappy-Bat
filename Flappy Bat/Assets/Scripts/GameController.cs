@@ -44,10 +44,6 @@ public class GameController : MonoBehaviour {
 	
 	void Start () {
 
-		// Spawn player
-		//Vector3 pos = new Vector3(-3.63f, 0, 0);		// Set position of the spawn
-		//Instantiate(Player, pos, Quaternion.identity);	// Spawn player
-
 		// Fill obstacles matrix
 		obstacle = new GameObject[5,2];
 		obstacle[0,0] = Obstacle_A_Up;
@@ -60,7 +56,6 @@ public class GameController : MonoBehaviour {
 		obstacle[3,1] = Obstacle_D_Down;
 		obstacle[4,0] = Obstacle_E_Up;
 		obstacle[4,1] = Obstacle_E_Down;
-
 
 		starthint = GameObject.Find("StartHint");
 		Vector3 hintpos = new Vector3();
@@ -81,7 +76,6 @@ public class GameController : MonoBehaviour {
 	void Update () {
 
 		if (started) {
-
 			// Update score
 			score_txt.guiText.text = score.ToString();
 

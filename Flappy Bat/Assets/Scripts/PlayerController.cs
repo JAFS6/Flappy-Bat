@@ -35,21 +35,23 @@ public class PlayerController : MonoBehaviour {
 
 	void Update () {
 
-		Vector3 position = new Vector3();
-		position = this.transform.position;
+		if (!dead) {
+			Vector3 position = new Vector3();
+			position = this.transform.position;
 
-		if (position.y > y_max) {
-			position.y = y_max;
-			this.transform.position = position;
-		}
-		else if (position.y < y_min) {
-			dead = true;
-			Application.LoadLevel("Game Over");
-		}
-		else if (GameController.started && Input.GetKeyDown(KeyCode.Space)) {
-			AudioSource.PlayClipAtPoint(fx_flap, this.transform.position);
-			anim.SetTrigger("Flap");
-			rigidbody2D.AddForce(new Vector2(0,flap_force));
+			if (position.y > y_max) {
+				position.y = y_max;
+				this.transform.position = position;
+			}
+			else if (position.y < y_min) {
+				dead = true;
+				Application.LoadLevel("Game Over");
+			}
+			else if (GameController.started && Input.GetKeyDown(KeyCode.Space)) {
+				AudioSource.PlayClipAtPoint(fx_flap, this.transform.position);
+				anim.SetTrigger("Flap");
+				rigidbody2D.AddForce(new Vector2(0,flap_force));
+			}
 		}
 	}
 
