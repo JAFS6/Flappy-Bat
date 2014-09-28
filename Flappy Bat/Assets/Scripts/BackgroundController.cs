@@ -14,6 +14,18 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-function OnMouseUp(){
-	Application.LoadLevel("Main Menu");
+using UnityEngine;
+using System.Collections;
+
+public class BackgroundController : MonoBehaviour {
+
+	float speed = 1f;
+	
+	// Update is called once per frame
+	void Update () {
+		Vector3 newposition = new Vector3();
+		newposition = this.transform.position;
+		newposition.x = newposition.x - speed * Time.deltaTime;
+		this.transform.position = newposition;
+	}
 }
