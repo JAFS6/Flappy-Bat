@@ -20,13 +20,43 @@ using System.Collections;
 public class GameController : MonoBehaviour {
 
 	static public bool started;
-	GameObject starthint;
-	GameObject score_txt;
-	int score;
-	GameObject bat;
-	Animator bat_animator;
+	static public int score;
+
+	public GameObject Obstacle_A_Up;		// Obstacle A Up prefab
+	public GameObject Obstacle_A_Down;		// Obstacle A Down prefab
+	public GameObject Obstacle_B_Up;		// Obstacle B Up prefab
+	public GameObject Obstacle_B_Down;		// Obstacle B Down prefab
+	public GameObject Obstacle_C_Up;		// Obstacle C Up prefab
+	public GameObject Obstacle_C_Down;		// Obstacle C Down prefab
+	public GameObject Obstacle_D_Up;		// Obstacle D Up prefab
+	public GameObject Obstacle_D_Down;		// Obstacle D Down prefab
+	public GameObject Obstacle_E_Up;		// Obstacle E Up prefab
+	public GameObject Obstacle_E_Down;		// Obstacle E Down prefab
+
+	private float delayBetweenSpawns = 1.8f;// Delay between obstacle spawns
+	private GameObject[,] obstacle;			// Obstacles 2D matrix, m[i,Up], m[i,Down]
+	private GameObject starthint;
+	private GameObject score_txt;
+	private GameObject bat;
+	private Animator bat_animator;
+	private float spawnTimer;				// Obstacles Spawn timer
 	
 	void Start () {
+
+		// Fill obstacles matrix
+		obstacle = new GameObject[5,2];
+		obstacle[0,0] = Obstacle_A_Up;
+		obstacle[0,1] = Obstacle_A_Down;
+		obstacle[1,0] = Obstacle_B_Up;
+		obstacle[1,1] = Obstacle_B_Down;
+		obstacle[2,0] = Obstacle_C_Up;
+		obstacle[2,1] = Obstacle_C_Down;
+		obstacle[3,0] = Obstacle_D_Up;
+		obstacle[3,1] = Obstacle_D_Down;
+		obstacle[4,0] = Obstacle_E_Up;
+		obstacle[4,1] = Obstacle_E_Down;
+
+
 		starthint = GameObject.Find("StartHint");
 		Vector3 hintpos = new Vector3();
 		hintpos = starthint.transform.position;
@@ -47,6 +77,16 @@ public class GameController : MonoBehaviour {
 
 		if (started) {
 
+			// Update score
+			score_txt.guiText.text = score.ToString();
+
+			// Update time passed
+			spawnTimer += Time.deltaTime;
+			
+			if (spawnTimer > delayBetweenSpawns) {
+				SpawnObstacle();
+				spawnTimer = 0f;
+			}
 		}
 		else if (!started && Input.GetKeyDown(KeyCode.Space)) {
 			// Hide start hint
@@ -57,9 +97,25 @@ public class GameController : MonoBehaviour {
 			// Set started game to true
 			started = true;
 			// Make bat be affected by gravity
-			bat.rigidbody2D.gravityScale = 0.4f;
+			bat.rigidbody2D.gravityScale = 0.7f;
 			// Tell the bat animator, the game has started
 			bat_animator.SetBool("Started",true);
+			// Spawn first obstacle
+			SpawnObstacle();
 		}
+	}
+
+	void SpawnObstacle () {
+
+		int obst = Random.Range(0, 5);
+
+		Vector3 pos = new Vector3(10, 2, 0);						// Set position of the spawn
+		Instantiate(obstacle[obst,0], pos, Quaternion.identity);	// Spawn obstacle upper part
+		pos = new Vector3(10, -2, 0);								// Set position of the spawn
+		Instantiate(obstacle[obst,1], pos, Quaternion.identity);	// Spawn obstacle lower part
+	}
+
+	static public void die () {
+		Application.LoadLevel("Game Over");
 	}
 }

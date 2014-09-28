@@ -14,23 +14,45 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+
 using UnityEngine;
 using System.Collections;
 
-public class BackgroundController : MonoBehaviour {
+public class ObstacleController : MonoBehaviour {
 
-	private float speed = 1f;
-	private float min_x = -30f;
-	
-	// Update is called once per frame
+	public bool isUp = false;
+
+	private float speed = 3f;
+	private float min_x = -20f;
+	private float start_x = 20f;
+	private GameObject bat;
+	private bool counted = false;
+
+	void Start () {
+		if (isUp) {
+			bat = GameObject.Find("Bat");
+		}
+	}
+
 	void Update () {
 		Vector3 newposition = new Vector3();
 		newposition = this.transform.position;
 		newposition.x = newposition.x - speed * Time.deltaTime;
-
+		
 		if (newposition.x < min_x) {
-			newposition.x = 49.9f;
+			Destroy(this.gameObject);
 		}
 		this.transform.position = newposition;
+
+		if (isUp) {
+			if (!counted && (bat.transform.position.x > this.transform.position.x)) {
+				GameController.score++;
+				counted = true;
+			}
+		}
+	}
+
+	void OnTriggerEnter(Collider other) {
+		GameController.die();
 	}
 }

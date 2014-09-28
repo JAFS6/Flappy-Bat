@@ -23,7 +23,8 @@ public class MainMenuSelector : MonoBehaviour {
 	public bool isHowToPlay = false;
 	public bool isCredits = false;
 	public bool isQuit = false;
-	Color32 colorbase;
+
+	private Color32 colorbase;
 
 	void Start () {
 		colorbase.r = 97;

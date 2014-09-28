@@ -19,10 +19,10 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 	
-	float flap_force = 200f;
-	float y_max = 4.5f;
-	float y_min = -5f;
-	Animator anim;
+	private float flap_force = 200f;
+	private float y_max = 4.5f;
+	private float y_min = -5f;
+	private Animator anim;
 	
 	void Start () {
 		anim = GetComponent<Animator>();
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour {
 			this.transform.position = position;
 		}
 		else if (position.y < y_min) {
-			Application.LoadLevel("Game Over");
+			GameController.die();
 		}
 		else if (GameController.started && Input.GetKeyDown(KeyCode.Space)) {
 			anim.SetTrigger("Flap");
