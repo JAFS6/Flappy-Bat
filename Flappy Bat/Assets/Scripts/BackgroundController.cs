@@ -20,12 +20,18 @@ using System.Collections;
 public class BackgroundController : MonoBehaviour {
 
 	float speed = 1f;
+	float min_x = -30f;
 	
 	// Update is called once per frame
 	void Update () {
 		Vector3 newposition = new Vector3();
 		newposition = this.transform.position;
 		newposition.x = newposition.x - speed * Time.deltaTime;
+
+		if(newposition.x < min_x) {
+			newposition.x = 49.9f;
+		}
+
 		this.transform.position = newposition;
 	}
 }
