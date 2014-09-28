@@ -33,11 +33,11 @@ public class GameController : MonoBehaviour {
 		hintpos.y = 0.7f;
 		starthint.transform.position = hintpos;
 
-		score_txt = GameObject.Find ("ScoreNumber");
+		score_txt = GameObject.Find("ScoreNumber");
 		score_txt.guiText.text = "0";
 		score = 0;
 
-		bat = GameObject.Find ("Bat");
+		bat = GameObject.Find("Bat");
 		bat_animator = bat.GetComponent<Animator> ();
 
 		started = false;
@@ -45,10 +45,10 @@ public class GameController : MonoBehaviour {
 	
 	void Update () {
 
-		if( started ) {
+		if (started) {
 
 		}
-		else if( !started && Input.GetKeyDown(KeyCode.Space) ) {
+		else if (!started && Input.GetKeyDown(KeyCode.Space)) {
 			// Hide start hint
 			Vector3 hintpos = new Vector3();
 			hintpos = starthint.transform.position;

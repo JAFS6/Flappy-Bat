@@ -19,7 +19,7 @@ using System.Collections;
 
 public class BackToMainMenu : MonoBehaviour {
 
-	void OnMouseUp(){
+	void OnMouseUp (){
 		Application.LoadLevel("Main Menu");
 	}
 }

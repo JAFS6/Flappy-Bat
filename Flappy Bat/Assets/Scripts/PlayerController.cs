@@ -37,10 +37,10 @@ public class PlayerController : MonoBehaviour {
 			position.y = y_max;
 			this.transform.position = position;
 		}
-		else  if(position.y < y_min) {
+		else if (position.y < y_min) {
 			Application.LoadLevel("Game Over");
 		}
-		else if( GameController.started && Input.GetKeyDown(KeyCode.Space) ) {
+		else if (GameController.started && Input.GetKeyDown(KeyCode.Space)) {
 			anim.SetTrigger("Flap");
 			rigidbody2D.AddForce(new Vector2(0,flap_force));
 		}

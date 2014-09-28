@@ -28,10 +28,9 @@ public class BackgroundController : MonoBehaviour {
 		newposition = this.transform.position;
 		newposition.x = newposition.x - speed * Time.deltaTime;
 
-		if(newposition.x < min_x) {
+		if (newposition.x < min_x) {
 			newposition.x = 49.9f;
 		}
-
 		this.transform.position = newposition;
 	}
 }
