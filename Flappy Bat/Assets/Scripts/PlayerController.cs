@@ -38,11 +38,15 @@ public class PlayerController : MonoBehaviour {
 			this.transform.position = position;
 		}
 		else if (position.y < y_min) {
-			GameController.die();
+			Application.LoadLevel("Game Over");
 		}
 		else if (GameController.started && Input.GetKeyDown(KeyCode.Space)) {
 			anim.SetTrigger("Flap");
 			rigidbody2D.AddForce(new Vector2(0,flap_force));
 		}
+	}
+
+	void OnCollisionEnter2D(Collision2D other) {
+		Application.LoadLevel("Game Over");
 	}
 }

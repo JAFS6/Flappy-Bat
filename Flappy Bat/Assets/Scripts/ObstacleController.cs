@@ -24,7 +24,6 @@ public class ObstacleController : MonoBehaviour {
 
 	private float speed = 3f;
 	private float min_x = -20f;
-	private float start_x = 20f;
 	private GameObject bat;
 	private bool counted = false;
 
@@ -50,9 +49,5 @@ public class ObstacleController : MonoBehaviour {
 				counted = true;
 			}
 		}
-	}
-
-	void OnTriggerEnter(Collider other) {
-		GameController.die();
 	}
 }

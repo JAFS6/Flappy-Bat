@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour {
 	static public bool started;
 	static public int score;
 
+	//public GameObject Player;				// Player prefab
 	public GameObject Obstacle_A_Up;		// Obstacle A Up prefab
 	public GameObject Obstacle_A_Down;		// Obstacle A Down prefab
 	public GameObject Obstacle_B_Up;		// Obstacle B Up prefab
@@ -42,6 +43,10 @@ public class GameController : MonoBehaviour {
 	private float spawnTimer;				// Obstacles Spawn timer
 	
 	void Start () {
+
+		// Spawn player
+		//Vector3 pos = new Vector3(-3.63f, 0, 0);		// Set position of the spawn
+		//Instantiate(Player, pos, Quaternion.identity);	// Spawn player
 
 		// Fill obstacles matrix
 		obstacle = new GameObject[5,2];
@@ -113,9 +118,5 @@ public class GameController : MonoBehaviour {
 		Instantiate(obstacle[obst,0], pos, Quaternion.identity);	// Spawn obstacle upper part
 		pos = new Vector3(10, -2, 0);								// Set position of the spawn
 		Instantiate(obstacle[obst,1], pos, Quaternion.identity);	// Spawn obstacle lower part
-	}
-
-	static public void die () {
-		Application.LoadLevel("Game Over");
 	}
 }
