@@ -62,11 +62,4 @@ public class MainMenuSelector : MonoBehaviour {
 			Application.Quit();
 		}
 	}
-
-	void OnApplicationQuit () {
-		PlayerPrefs.DeleteKey("Screenmanager Resolution Width");
-		PlayerPrefs.DeleteKey("Screenmanager Resolution Height");
-		PlayerPrefs.DeleteKey("Screenmanager Is Fullscreen mode");
-		PlayerPrefs.DeleteKey("UnityGraphicsQuality");
-	}
 }
