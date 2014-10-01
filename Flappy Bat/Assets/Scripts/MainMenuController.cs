@@ -25,6 +25,10 @@ public class MainMenuController : MonoBehaviour {
 			// load level 1
 			Application.LoadLevel("Level 1");
 		}
+		else if (Input.GetKeyDown(KeyCode.Escape)) {
+			//quit the game
+			Application.Quit();
+		}
 	}
 
 	void OnApplicationQuit () {

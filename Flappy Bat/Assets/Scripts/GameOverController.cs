@@ -25,5 +25,9 @@ public class GameOverController : MonoBehaviour {
 			// load level 1
 			Application.LoadLevel("Level 1");
 		}
+		else if (Input.GetKeyDown(KeyCode.Escape)) {
+			// load main menu
+			Application.LoadLevel("Main Menu");
+		}
 	}
 }
