@@ -48,7 +48,10 @@ public class PlayerController : MonoBehaviour {
 				Application.LoadLevel("Game Over");
 			}
 			else if (GameController.started && Input.GetKeyDown(KeyCode.Space)) {
-				AudioSource.PlayClipAtPoint(fx_flap, this.transform.position);
+
+				if (SoundController.sound_on) {
+					AudioSource.PlayClipAtPoint(fx_flap, this.transform.position);
+				}
 				anim.SetTrigger("Flap");
 				rigidbody2D.AddForce(new Vector2(0,flap_force));
 			}
@@ -56,7 +59,10 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other) {
-		AudioSource.PlayClipAtPoint(fx_impact, this.transform.position);
+
+		if (SoundController.sound_on) {
+			AudioSource.PlayClipAtPoint(fx_impact, this.transform.position);
+		}
 		dead = true;
 		Invoke("goGameOver", 0.5f);
 	}

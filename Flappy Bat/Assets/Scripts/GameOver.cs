@@ -42,7 +42,9 @@ public class GameOver : MonoBehaviour {
 		score_txt.guiText.text = score.ToString();
 		best_score_txt.guiText.text = best_score.ToString();
 
-		AudioSource.PlayClipAtPoint(bg_game_over, new Vector3(0,0,0));
-		AudioSource.PlayClipAtPoint(fx_game_over, new Vector3(0,0,0));
+		if (SoundController.sound_on) {
+			AudioSource.PlayClipAtPoint(bg_game_over, new Vector3(0,0,0));
+			AudioSource.PlayClipAtPoint(fx_game_over, new Vector3(0,0,0));
+		}
 	}
 }

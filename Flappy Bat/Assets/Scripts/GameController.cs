@@ -40,8 +40,19 @@ public class GameController : MonoBehaviour {
 	private GameObject bat;
 	private Animator bat_animator;
 	private float spawnTimer;				// Obstacles Spawn timer
+
+	private AudioSource bg_music;
 	
 	void Start () {
+
+		bg_music = GetComponent<AudioSource>();
+
+		if (SoundController.sound_on) {
+			bg_music.mute = false;
+		}
+		else {
+			bg_music.mute = true;
+		}
 
 		// Fill obstacles matrix
 		obstacle = new GameObject[5,2];
