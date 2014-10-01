@@ -22,7 +22,6 @@ public class GameController : MonoBehaviour {
 	static public bool started;
 	static public int score;
 
-	//public GameObject Player;				// Player prefab
 	public GameObject Obstacle_A_Up;		// Obstacle A Up prefab
 	public GameObject Obstacle_A_Down;		// Obstacle A Down prefab
 	public GameObject Obstacle_B_Up;		// Obstacle B Up prefab
