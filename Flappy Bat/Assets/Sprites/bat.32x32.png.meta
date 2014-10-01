@@ -56,8 +56,8 @@ TextureImporter:
         y: 0
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .824999988, y: .455000013}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: bat.32x32_1
       rect:
@@ -67,7 +67,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: .953125119, y: .453125}
+      pivot: {x: .825999975, y: .455000013}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: bat.32x32_2
       rect:
@@ -77,7 +77,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: .950000048, y: .450000018}
+      pivot: {x: .825998545, y: .857692778}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: bat.32x32_3
       rect:
@@ -87,7 +87,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: .953125, y: .859375}
+      pivot: {x: .830526352, y: .454722494}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: bat.32x32_4
       rect:
@@ -97,17 +97,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 9
-      pivot: {x: .950000286, y: .453125}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: bat.32x32_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: .953125, y: .453125}
+      pivot: {x: .830526352, y: .454722494}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
