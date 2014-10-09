@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour {
 			if (position.y > y_max) {
 				position.y = y_max;
 				this.transform.position = position;
+				rigidbody2D.velocity = new Vector2(0,0);
 			}
 			else if (position.y < y_min) {
 				dead = true;
