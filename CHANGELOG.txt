@@ -1,3 +1,16 @@
+v1.2.2:
+
+	Fixed:
+		- Upward force canceled when the bat reaches upper part of the screen.
+		- Graphic issue with one of the obstacles.
+
+	Added:
+		- Hotkey ESC to go back to main menu from the How to play screen and from the Credits screen.
+		- Hotkey 'h' to go to the How to play screen from the Main menu screen.
+		- Hotkey 'c' to go to the Credits screen from the Main menu screen.
+		- Hotkey 'm' to switch between Mute and Unmute in the Main menu screen.
+		- Startup dialog.
+
 v1.2.1:
 
 	Fixed:
