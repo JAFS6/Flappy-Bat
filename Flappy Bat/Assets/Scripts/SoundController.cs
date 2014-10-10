@@ -25,8 +25,8 @@ public class SoundController : MonoBehaviour {
 	public bool isMute = false;
 	public bool isUnmute = false;
 	
-	private GameObject mute;
-	private GameObject unmute;
+	static private GameObject mute;
+	static private GameObject unmute;
 
 	void Start () {
 		mute = GameObject.Find("Mute");
@@ -54,16 +54,17 @@ public class SoundController : MonoBehaviour {
 	}
 
 	void OnMouseUp () {
+		toggleSound();
+	}
 
-		mute = GameObject.Find("Mute");
-		unmute = GameObject.Find("Unmute");
-
+	static public void toggleSound () {
+		
 		Vector3 pos_mute = new Vector3();
 		pos_mute = mute.transform.position;
-
+		
 		Vector3 pos_unmute = new Vector3();
 		pos_unmute = unmute.transform.position;
-
+		
 		if (sound_on) { // If sound was on
 			// Put unmute icon
 			pos_mute.z = 10;
@@ -74,10 +75,10 @@ public class SoundController : MonoBehaviour {
 			pos_mute.z = 0;
 			pos_unmute.z = 10;
 		}
-
+		
 		mute.transform.position = pos_mute;
 		unmute.transform.position = pos_unmute;
-
+		
 		sound_on = !sound_on; // Change state
 	}
 }

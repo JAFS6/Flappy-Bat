@@ -25,9 +25,20 @@ public class MainMenuController : MonoBehaviour {
 			// load level 1
 			Application.LoadLevel("Level 1");
 		}
+		else if (Input.GetKeyDown(KeyCode.H)) {
+			// load how to play screen
+			Application.LoadLevel("How To Play");
+		}
+		else if (Input.GetKeyDown(KeyCode.C)) {
+			// load credits screen
+			Application.LoadLevel("Credits");
+		}
 		else if (Input.GetKeyDown(KeyCode.Escape)) {
 			//quit the game
 			Application.Quit();
+		}
+		else if (Input.GetKeyDown(KeyCode.M)) {
+			SoundController.toggleSound();
 		}
 	}
 
