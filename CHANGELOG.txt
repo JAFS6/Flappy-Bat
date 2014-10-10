@@ -1,0 +1,27 @@
+v1.2.1:
+
+	Fixed:
+		- Graphic issue in the bat flap animation.
+		- Obstacles hitbox fitted.
+		- Bat hitbox fitted.
+		
+	Added:
+		- Hotkey ESC to go back to main menu from game over screen and hotkey ESC to quit game from main menu screen.
+		- Added a mute/unmute button in the main menu screen.
+
+v1.1.1:
+
+	Fixed:
+		- Background music loop
+		- Bat hitbox collider fitted
+
+	Added:
+		- Spacebar as shortcut of Play in the Main menu screen.
+
+v1.1:
+
+	Fixed:
+		- The hidden obstacles problem has been solved.
+
+	Added:
+		- You can now restart with the spacebar in the game over screen.
