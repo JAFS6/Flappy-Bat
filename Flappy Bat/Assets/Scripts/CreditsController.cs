@@ -20,8 +20,7 @@ using System.Collections;
 public class CreditsController : MonoBehaviour {
 
 	private AudioSource bg_music;
-
-	// Use this for initialization
+	
 	void Start () {
 		bg_music = GetComponent<AudioSource>();
 		
@@ -30,6 +29,14 @@ public class CreditsController : MonoBehaviour {
 		}
 		else {
 			bg_music.mute = true;
+		}
+	}
+
+	void Update () {
+		
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			// load main menu
+			Application.LoadLevel("Main Menu");
 		}
 	}
 }
